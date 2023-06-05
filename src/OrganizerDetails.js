@@ -12,7 +12,7 @@ const OrganizerDetails = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const { data } = await axios.get("http://localhost:4000/api/profiles");
+        const { data } = await axios.get("https://tagmango-server.onrender.com/api/profiles");
         setProfiles(data);
         setIsLoading(false);
       } catch (error) {
@@ -29,7 +29,7 @@ const OrganizerDetails = () => {
         setSelectedProfile(profileCache[profileID]);
       } else {
         const { data } = await axios.get(
-          `http://localhost:4000/api/persons/${profileID}`
+          `https://tagmango-server.onrender.com/api/persons/${profileID}`
         );
         const updatedCache = { ...profileCache, [profileID]: data };
         setProfileCache(updatedCache);
