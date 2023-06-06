@@ -20,6 +20,7 @@ const ProfileSection = ({ profile: { firstName, lastName, email, mobileNumber, g
           <label htmlFor={id}>{label}</label>
           {type === "select" ? (
             <select id={id} value={value} onChange={handleInputChange(id)} required>
+              <option value="" disabled hidden>{`Select ${id}`}</option>
               {options.map((option) => (
                 <option key={option} value={option}>{option}</option>
               ))}

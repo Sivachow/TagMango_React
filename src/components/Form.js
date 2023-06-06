@@ -105,7 +105,6 @@ const Form = () => {
     Object.keys(portfolio).forEach((key) => {
       if (Array.isArray(portfolio[key])) {
         portfolio[key].forEach((item) => {
-          console.log(`${key}`);
           formData.append(`${key}`, item);
         });
       } else {
