@@ -117,8 +117,12 @@ const Form = () => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-      }, (res)=>setFormSubmitted(true));
-      ;
+      }).then((res) => {
+        setFormSubmitted(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   if (formSubmitted) {
