@@ -82,7 +82,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setFormSubmitted(true);
     const formData = new FormData();
     Object.keys(profile).forEach((key) => {
       formData.append(key, profile[key]);
@@ -117,8 +117,6 @@ const Form = () => {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-      }).then((res) => {
-        setFormSubmitted(true);
       })
       .catch((error) => {
         console.error(error);
