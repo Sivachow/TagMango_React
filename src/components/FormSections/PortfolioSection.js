@@ -49,6 +49,7 @@ const PortfolioSection = ({ portfolio, handleInputChange }) => {
           accept="video/*"
           multiple
           onChange={handleVideoInputChange}
+          required
         />
       </div>
     </div>
